@@ -1,13 +1,58 @@
-# Javascript
+# JavaScript Tree API
 
-Before you get started, make sure you have node installed and configured correctly. 
+Welcome to the JavaScript Tree API! This simple application allows you to manage a tree structure through a set of RESTful endpoints.
 
-To build, open your terminal and navigate to the `javascript` directory in this project and run `npm install`.
+## Getting Started
 
-To start your server, run `node index.js`.  Open up your favorite browser and navigate to http://localhost:3001/ and you should see "Hello World!".
+Before you begin, ensure that you have **Node.js** installed and configured on your machine.
 
-To run tests for the project, run `npm test`.
+1. Clone this repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Run the command `npm install` to install the necessary dependencies.
+4. Start the server by running `npm run start`.
 
-To lint the project, run `npm run lint`.
+The server will be up and running at [http://localhost:3001/](http://localhost:3001/).
 
-Now follow the steps outlined in [The Problem](https://github.com/hinge-health/interviews-services#the-problem)
+## API Endpoints
+
+### 1. GET /api/tree
+
+Retrieves the entire tree stored in memory.
+
+**Example:**
+```json
+[
+  {
+    "1": {
+      "label": "root",
+      "children": {
+        "2": {
+          "label": "ant",
+          "children": {}
+        },
+        "3": {
+          "label": "bear",
+          "children": {
+            "4": {
+              "label": "cat",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+]
+```
+
+### 2. POST /api/tree
+
+Stores a new node into the existing tree.
+
+**Payload:**
+```json
+{
+    "parent": "<id>",
+    "label": "<label>"
+}
+```
