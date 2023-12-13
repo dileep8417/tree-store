@@ -17,7 +17,9 @@ module.exports = [
                                 "4": {
                                     "label": "cat",
                                     "children": []
-                                },
+                                }
+                            },
+                            {
                                 "5": {
                                     "label": "dog",
                                     "children": [
